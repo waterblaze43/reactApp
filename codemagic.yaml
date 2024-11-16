@@ -9,8 +9,8 @@ workflows:
         bundle_identifier: com.kamohacks33.app
       vars:
         BUNDLE_ID: "com.kamohacks33.app"
-        XCODE_WORKSPACE: "CodemagicSample.xcworkspace" # <-- Put the name of your Xcode workspace here
-        XCODE_SCHEME: "CodemagicSample" # <-- Put the name of your Xcode scheme here
+        XCODE_WORKSPACE: "Aora.xcworkspace" # <-- Put the name of your Xcode workspace here
+        XCODE_SCHEME: "Aora" # <-- Put the name of your Xcode scheme here
     scripts:
       - name: Install npm dependencies
         script: | 
