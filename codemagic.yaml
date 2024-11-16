@@ -14,13 +14,15 @@ workflows:
           yarn install
           yarn global add expo-cli
           expo eject
-      - name: Build IPA
+      - name: Build and Export IPA
         script: |
           xcodebuild -workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
                     -scheme "$XCODE_SCHEME" \
                     -configuration Release \
                     -archivePath "$CM_BUILD_DIR/ios/Archives/$XCODE_SCHEME.xcarchive" \
+                    build \
+                    -exportArchive \
                     -exportOptionsPlist ios/ExportOptions.plist \
-                    build
+                    -exportPath "$CM_BUILD_DIR/ios/IPA"
     artifacts:
-      - build/ios/ipa/*.ipa
+      - build/ios/IPA/*.ipa
