@@ -6,9 +6,9 @@ workflows:
     environment:
       ios_signing:
         distribution_type: ad_hoc
-        bundle_identifier: io.codemagic.sample.reactnative
+        bundle_identifier: com.kamohacks33.app
       vars:
-        BUNDLE_ID: "io.codemagic.sample.reactnative"
+        BUNDLE_ID: "com.kamohacks33.app"
         XCODE_WORKSPACE: "CodemagicSample.xcworkspace" # <-- Put the name of your Xcode workspace here
         XCODE_SCHEME: "CodemagicSample" # <-- Put the name of your Xcode scheme here
     scripts:
