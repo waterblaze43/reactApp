@@ -12,7 +12,7 @@ workflows:
           XCODE_SCHEME: "ExpoApp" # <-- Put the name of your Xcode scheme here
           BUNDLE_ID: "io.codemagic.expoapp" # <-- Put your Bundle Id here e.g com.domain.myapp
           APP_ID: 1616629701 # <-- Put the app id number here. This is found in App Store Connect > App > General > App Information
-      node: 16.14.2
+      node: 20.11.1
       xcode: 16.1
       cocoapods: default
     triggering:
