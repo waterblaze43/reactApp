@@ -26,8 +26,7 @@ workflows:
           yarn install
           yarn global add expo-cli
           expo eject
-      - name:   
- Build IPA
+      - name: Build IPA
         script: |
           xcodebuild -workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
                     -scheme "$XCODE_SCHEME" \
