@@ -9,9 +9,6 @@ workflows:
     integrations:
       app_store_connect: codemagic
     environment:
-      ios_signing:
-        distribution_type: app_store
-        bundle_identifier: io.codemagic.expoapp
       vars:
           XCODE_WORKSPACE: "ExpoApp.xcworkspace" # <-- Put the name of your Xcode workspace here
           XCODE_SCHEME: "ExpoApp" # <-- Put the name of your Xcode scheme here
@@ -62,11 +59,3 @@ workflows:
         - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
         - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
     
-
-        # Configuration related to TestFlight (optional)
-        # Note: This action is performed during post-processing.
-        
-
-        # Configuration related to App Store (optional)
-        # Note: This action is performed during post-processing.
-        submit_to_app_store: false
