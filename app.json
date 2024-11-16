@@ -9,6 +9,7 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
+      "bundleIdentifier": "io.codemagic.sample.reactnative",
       "supportsTablet": true
     },
     "android": {
