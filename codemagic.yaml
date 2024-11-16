@@ -5,13 +5,12 @@ workflows:
     instance_type: mac_mini_m2
     environment:
       ios_signing:
-        distribution_type: app_store
+        distribution_type: development
         bundle_identifier: io.codemagic.sample.reactnative
       vars:
         BUNDLE_ID: "io.codemagic.sample.reactnative"
         XCODE_WORKSPACE: "CodemagicSample.xcworkspace" # <-- Put the name of your Xcode workspace here
         XCODE_SCHEME: "CodemagicSample" # <-- Put the name of your Xcode scheme here
-        APP_STORE_APPLE_ID: 1555555551
     scripts:
       - name: Install npm dependencies
         script: | 
@@ -29,11 +28,6 @@ workflows:
           cd ios && pod install
       - name: Set up provisioning profiles settings on Xcode project
         script: xcode-project use-profiles
-      - name: Increment build number
-        script: | 
-          cd $CM_BUILD_DIR/ios
-          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_STORE_APPLE_ID")
-          agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
       - name: Build ipa for distribution
         script: | 
           xcode-project build-ipa \
