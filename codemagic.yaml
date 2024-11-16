@@ -8,18 +8,6 @@ workflows:
         XCODE_WORKSPACE: "ExpoApp.xcworkspace"
         XCODE_SCHEME: "ExpoApp"
         BUNDLE_ID: "io.codemagic.expoapp"
-    node: 20.11.1
-    xcode: 16.1
-    cocoapods: default
-    triggering:
-      events:
-        - push
-        - tag
-        - pull_request
-      branch_patterns:
-        - pattern: develop
-          include: true
-          source: true
     scripts:
       - name: Install dependencies, Expo CLI and eject app
         script: |
